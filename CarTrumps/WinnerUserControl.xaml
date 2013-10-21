@@ -1,0 +1,101 @@
+﻿<!--
+ Copyright (c) 2012 Nokia Corporation.
+ -->
+
+<UserControl x:Class="CarTrumps.WinnerUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="800" d:DesignWidth="480">
+
+    <UserControl.Name>winnerUserControlId</UserControl.Name>
+    
+    <UserControl.RenderTransform>
+        <TranslateTransform />
+    </UserControl.RenderTransform>
+        
+    <Grid x:Name="LayoutRoot" Background="Black">
+       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />           
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" x:Name="image1" Source="{Binding Path=ActiveCard.ImagePath}" Stretch="UniformToFill" />
+        <Image Grid.Row="0" x:Name="image1winner" Source="images/winner_big.png" Height="{Binding ElementName=image1, Path=Height}" Width="{Binding ElementName=image1, Path=Width}" Stretch="UniformToFill" Visibility="{Binding ActiveCard.IsWinner}" />
+        <Border Grid.Row="0" VerticalAlignment="Bottom" Height="50" Background="Black" Opacity="0.6" BorderThickness="0" Margin="0,0,0,0" />
+        <TextBlock Grid.Row="0" VerticalAlignment="Bottom" x:Name="textBlock1" Text="{Binding Path=ActiveCard.Name}" Style="{StaticResource WhiteTextTitle2Style}"/>
+
+        <Grid Grid.Row="1" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" x:Name="card1value" Text="{Binding OwnValue}" HorizontalAlignment="Center" Style="{StaticResource WhiteTextTitle2Style}" />
+            <TextBlock Grid.Column="1" Text="Vs." HorizontalAlignment="Center" Style="{StaticResource WhiteTextTitle2Style}" />
+            <TextBlock Grid.Column="2" x:Name="card2value" Text="{Binding OpponentValue}" HorizontalAlignment="Center" Style="{StaticResource WhiteTextTitle2Style}" />
+            <TextBlock Grid.Row="1" x:Name="comparingText" Grid.ColumnSpan="3" Text="{Binding SelectedCardPropertyName}" Opacity="0.7" Style="{StaticResource WhiteTextNormalStyle}" />
+        </Grid>
+        
+        <Image Grid.Row="2" x:Name="image2" Source="{Binding Path=ChallengerCard.ImagePath}" Stretch="UniformToFill" />
+        <Border Grid.Row="2" VerticalAlignment="Bottom" Height="50" Background="Black" Opacity="0.6" BorderThickness="0" Margin="0,0,0,0" />
+        <TextBlock Grid.Row="2" x:Name="textBlock2" VerticalAlignment="Bottom" Text="{Binding Path=ChallengerCard.Name}" Style="{StaticResource WhiteTextTitle2Style}"/>
+        <Image Grid.Row="2" x:Name="image2winner" Source="/images/winner_big.png" Height="{Binding Height, ElementName=image1}" Width="{Binding Width, ElementName=image1}" Stretch="UniformToFill" Visibility="{Binding ChallengerCard.IsWinner}" />
+    </Grid>
+
+    <UserControl.Resources>
+        <Storyboard x:Name="hideWinnerControlAnim">
+            <ObjectAnimationUsingKeyFrames BeginTime="0:0:0"
+                                           Duration="0:0:1"
+                                           Storyboard.TargetName="winnerUserControlId"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="showWinnerControlAnim">
+            <ObjectAnimationUsingKeyFrames BeginTime="0:0:0"
+                                           Duration="0:0:0"
+                                           Storyboard.TargetName="winnerUserControlId"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+
+            <DoubleAnimation BeginTime="0:0:0"
+                                 Duration="0:0:0.5"
+                                 Storyboard.TargetName="winnerUserControlId"
+                                 Storyboard.TargetProperty="(UIElement.Opacity)"
+                                 From="0"
+                                 To="1" />
+
+            <DoubleAnimation BeginTime="0:0:0"
+                                 Duration="0:0:0.5"
+                                 Storyboard.TargetName="winnerUserControlId"
+                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                 From="-1024"
+                                 To="0" />
+        </Storyboard>
+    </UserControl.Resources>
+</UserControl>

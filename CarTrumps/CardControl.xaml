@@ -1,0 +1,100 @@
+﻿<!--
+ Copyright (c) 2012 Nokia Corporation.
+ -->
+
+<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:CarTrumps" x:Class="CarTrumps.GameCard"
+    mc:Ignorable="d"
+    d:DesignHeight="728" d:DesignWidth="480">
+    
+	<UserControl.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</UserControl.FontFamily>
+	<UserControl.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</UserControl.FontSize>
+	<UserControl.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</UserControl.Foreground>
+    
+    <Grid x:Name="LayoutRoot" Background="Black">
+        
+		<Image x:Name="imageId" VerticalAlignment="Top" Height="350" Source="{Binding ActiveCard.ImagePath}" Stretch="UniformToFill">
+			<Image.RenderTransform>
+				<TranslateTransform />
+			</Image.RenderTransform>
+		</Image>
+		<Rectangle Height="50" VerticalAlignment="Top" Margin="0,300,0,0" Opacity="0.5" Fill="Black"/>
+
+		<Grid Margin="0,293,0,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="10*" />
+				<RowDefinition Height="25*" />
+				<RowDefinition Height="25*" />
+				<RowDefinition Height="25*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="2*" />
+				<ColumnDefinition Width="3*" />
+				<ColumnDefinition Width="2*" />
+				<ColumnDefinition Width="3*" />
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="{Binding ActiveCard.Name}" Style="{StaticResource WhiteTextTitle3Style}" Opacity="0.8" />
+			<TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Text="{Binding StatusMsg}" Style="{StaticResource WhiteTextSmallStyle}" Margin="10,10,0,5" />
+
+			<StackPanel Margin="20,0,0,0" Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+				<Image Margin="0,20,0,20" Source="/images/toggle_engine_off.png"/>
+				<TextBlock Text="" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			</StackPanel>
+			<TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ActiveCard.Engine, StringFormat=\{0\} cc}" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			<Border Margin="0,10,20,10" x:Name="Engine" Opacity="0" Background="DarkGray" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Tap="border_Tap"/>
+
+			<StackPanel Margin="20,0,0,0" Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+				<Image Margin="0,20,0,20" Source="/images/toggle_speed_off.png"/>
+				<TextBlock Text="" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			</StackPanel>
+			<TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding ActiveCard.Speed, StringFormat=\{0\} km/h}" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			<Border Margin="0,10,20,10" x:Name="Speed" Opacity="0" Background="DarkGray" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  Tap="border_Tap"/>
+
+			<StackPanel Margin="20,0,0,0" Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+				<Image Margin="0,20,0,20" Source="/images/toggle_economy_off.png"/>
+				<TextBlock Text="" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			</StackPanel>
+			<TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding ActiveCard.Economy, StringFormat=\{0\} l/100 km}" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			<Border Margin="0,10,20,10" x:Name="Economy" Opacity="0" Background="DarkGray" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"  Tap="border_Tap"/>
+
+			<StackPanel Margin="20,0,0,0" Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2">
+				<Image Margin="0,20,0,20" Source="/images/toggle_torque_off.png"/>
+				<TextBlock Text="" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			</StackPanel>
+			<TextBlock Grid.Row="2" Grid.Column="3" Text="{Binding ActiveCard.Torque, StringFormat=\{0\} Nm}" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			<Border Margin="0,10,20,10" x:Name="Torque" Opacity="0" Background="DarkGray" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"  Tap="border_Tap"/>
+
+			<StackPanel Margin="20,0,0,0" Orientation="Horizontal" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2">
+				<Image Margin="0,20,0,20" Source="/images/toggle_power_off.png"/>
+				<TextBlock Text="" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			</StackPanel>
+			<TextBlock Grid.Row="3" Grid.Column="3" Text="{Binding ActiveCard.Power, StringFormat=\{0\} hp}" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			<Border Margin="0,10,20,10" x:Name="Power" Opacity="0" Background="DarkGray" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"  Tap="border_Tap"/>
+
+			<StackPanel Margin="20,0,0,0" Orientation="Horizontal" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2">
+				<Image Margin="0,20,0,20" Source="/images/toggle_0-100_off.png"/>
+				<TextBlock Text="" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			</StackPanel>
+			<TextBlock Grid.Row="4" Grid.Column="3" Text="{Binding ActiveCard.Acceleration, StringFormat=\{0\} s}" Style="{StaticResource WhiteTextNormalStyle}" VerticalAlignment="Center"/>
+			<Border Margin="0,10,20,10" x:Name="Acceleration" Opacity="0" Background="DarkGray" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"  Tap="border_Tap"/>
+		</Grid>
+		<local:CardIndicatorControl x:Name="cardNumber" Margin="382,310,10,332"/>
+
+		<!-- Shows result -->
+
+		<!--LayoutRoot contains the root grid where all other page content is placed-->
+        
+	</Grid>
+</UserControl>

@@ -1,0 +1,40 @@
+﻿<!--
+ Copyright (c) 2012 Nokia Corporation.
+ -->
+
+<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:CarTrumps"
+    x:Class="CarTrumps.WinnerPage"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+	<Grid HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480">
+		<local:WinnerUserControl x:Name="winnerPanel" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480"/>
+		<Grid x:Name="gameover" Background="#FF1B80B9" Opacity="0.8">
+			<Image x:Name="crown" Source="images/winnercrown.png" Stretch="None" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,188,0,420"/>
+			<TextBlock x:Name="winnerText" TextWrapping="Wrap" TextAlignment="Center" FontSize="26.667" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,400,0,0">
+				<Run Text="Congratulations!"/>
+				<LineBreak/>
+				<Run Text="You are the Winner of the game! "/>
+				<LineBreak/>
+				<Run Text="Wanna play again - press back"/>
+			</TextBlock>
+            <TextBlock x:Name="loosersText" TextWrapping="Wrap" TextAlignment="Center" FontSize="26.667" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,400,00,0">
+                <Run Text="Sorry you lost!" />
+                <LineBreak />
+                <Run Text="Wanna play again - press back." />
+            </TextBlock>
+		</Grid>
+	</Grid>
+
+</phone:PhoneApplicationPage>

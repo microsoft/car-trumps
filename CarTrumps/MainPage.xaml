@@ -1,0 +1,60 @@
+﻿<!--
+ Copyright (c) 2012 Nokia Corporation.
+ -->
+
+<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing"
+    x:Class="CarTrumps.MainPage"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    d:DesignHeight="800" d:DesignWidth="480">
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="False">
+            <shell:ApplicationBarIconButton IconUri="/images/appbar.questionmark.rest.png" Text="Info" Click="ApplicationBarIconButton_Click_1"/>
+            <shell:ApplicationBarIconButton IconUri="/images/appbar.trumps.png" Text="Browse cards" Click="ApplicationBarIconButton_Click_2"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+	<Grid x:Name="LayoutRoot">
+		<Grid.Background>
+			<ImageBrush ImageSource="images/bg_phones_tap.png" Stretch="UniformToFill"/>
+		</Grid.Background>
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="32,17,0,28">
+			<TextBlock Text="Car Trumps" Style="{StaticResource BlueTextTitleStyle}"/>
+		</StackPanel>
+
+		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<StackPanel Grid.Row="0" Margin="32,17,0,28">
+				<TextBlock TextWrapping="Wrap" Text="Touch other player's phone to start a new game" Style="{StaticResource WhiteTextTitle2Style}"/>
+			</StackPanel>
+
+			<StackPanel Grid.Row="1" Margin="32,17,0,28">
+				<TextBlock TextWrapping="Wrap" Text="A random card will open from your deck" Style="{StaticResource WhiteTextTitle2Style}"/>
+				<es:RegularPolygon x:Name="ismaster" Fill="#FFF4F4F5" Height="40" InnerRadius="0.47211" PointCount="5" Stretch="Fill" Stroke="Black" UseLayoutRounding="False" Width="40" Margin="100,20,0,0" HorizontalAlignment="Left" Visibility="Collapsed"/>
+			</StackPanel>
+		</Grid>
+	</Grid>
+
+</phone:PhoneApplicationPage>

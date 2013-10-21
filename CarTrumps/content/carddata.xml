@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cards>
+	<card>
+		<id>1</id>
+		<image>content/v70.jpg</image>
+		<name>Volvo V70 2.5T</name>
+    <engine>2499</engine>
+    <power>170</power>
+		<torque>350</torque>
+    <speed>225</speed>
+    <economy>8.7</economy>
+    <acceleration>7.6</acceleration>
+	</card>
+	<card>
+		<id>2</id>
+		<image>content/s40.jpg</image>
+		<name>Volvo S40</name>
+    <engine>1799</engine>
+    <power>90</power>
+		<torque>150</torque>
+    <speed>185</speed>
+    <economy>6.7</economy>
+    <acceleration>11.6</acceleration>
+  </card>
+  <card>
+    <id>3</id>
+    <image>content/c30.jpg</image>
+    <name>Volvo C30 T5</name>
+    <engine>2521</engine>
+    <power>169</power>
+    <torque>320</torque>
+    <speed>225</speed>
+    <economy>9.0</economy>
+    <acceleration>7.1</acceleration>
+  </card>
+  <card>
+    <id>4</id>
+    <image>content/c70.jpg</image>
+    <name>Volvo C70 T5</name>
+    <engine>2521</engine>
+    <power>169</power>
+    <torque>320</torque>
+    <speed>225</speed>
+    <economy>9.4</economy>
+    <acceleration>8.0</acceleration>
+  </card>
+  <card>
+    <id>5</id>
+    <image>content/xc70.jpg</image>
+    <name>Volvo XC70 D5</name>
+    <engine>2400</engine>
+    <power>158</power>
+    <torque>440</torque>
+    <speed>225</speed>
+    <economy>6.6</economy>
+    <acceleration>8.0</acceleration>
+  </card>
+  <card>
+    <id>6</id>
+    <image>content/v70.jpg</image>
+    <name>Volvo V70 D3</name>
+    <engine>1984</engine>
+    <power>110</power>
+    <torque>350</torque>
+    <speed>225</speed>
+    <economy>5.1</economy>
+    <acceleration>9.5</acceleration>
+  </card>
+  <card>
+    <id>7</id>
+    <image>content/xc60.jpg</image>
+    <name>Volvo XC60 D3</name>
+    <engine>2400</engine>
+    <power>120</power>
+    <torque>420</torque>
+    <speed>225</speed>
+    <economy>6.8</economy>
+    <acceleration>10.9</acceleration>
+  </card>
+  <card>
+    <id>8</id>
+    <image>content/v70r.jpg</image>
+    <name>Volvo V70R</name>
+    <engine>2521</engine>
+    <power>220</power>
+    <torque>400</torque>
+    <speed>250</speed>
+    <economy>9.0</economy>
+    <acceleration>6.5</acceleration>
+  </card>
+  <card>
+    <id>9</id>
+    <image>content/240.jpg</image>
+    <name>Volvo 240GL</name>
+    <engine>2316</engine>
+    <power>114</power>
+    <torque>136</torque>
+    <speed>172</speed>
+    <economy>10</economy>
+    <acceleration>12.6</acceleration>
+  </card>
+  <card>
+    <id>10</id>
+    <image>content/850.jpg</image>
+    <name>Volvo 850</name>
+    <engine>2435</engine>
+    <power>168</power>
+    <torque>162</torque>
+    <speed>187</speed>
+    <economy>10</economy>
+    <acceleration>10.2</acceleration>
+  </card>
+  <card>
+    <id>11</id>
+    <image>content/960.jpg</image>
+    <name>Volvo 960 V6</name>
+    <engine>2922</engine>
+    <power>181</power>
+    <torque>199</torque>
+    <speed>206</speed>
+    <economy>9.4</economy>
+    <acceleration>9.3</acceleration>
+  </card>
+  <card>
+    <id>12</id>
+    <image>content/s70.jpg</image>
+    <name>Volvo S70</name>
+    <engine>2435</engine>
+    <power>190</power>
+    <torque>199</torque>
+    <speed>220</speed>
+    <economy>8.7</economy>
+    <acceleration>8.8</acceleration>
+  </card>
+</cards>
