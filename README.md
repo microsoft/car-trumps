@@ -13,9 +13,9 @@ The comparison is executed by touching the devices together. The winner gets the
 opponent's losing card. The game ends when either player runs out of cards.
 
 This example application is hosted in GitHub:
-https://github.com/nokia-developer/car-trumps
+https://github.com/Microsoft/car-trumps
 
-For more information on implementation and porting, visit Nokia Lumia
+For more information on implementation and porting, visit Lumia
 Developer's Library:
 http://developer.nokia.com/Resources/Library/Lumia/#!code-examples/car-trumps.html
 
@@ -84,7 +84,7 @@ http://msdn.microsoft.com/en-us/library/gg588378%28v=vs.92%29.aspx
 
 See the license text file delivered with this project. The license file is also
 available online at
-https://github.com/nokia-developer/car-trumps/blob/master/Licence.txt
+https://github.com/Microsoft/car-trumps/blob/master/Licence.txt
 
 All the car images were taken from [Wikipedia](en.wikipedia.org). Here is a
 complete list of the used images (public domain):
