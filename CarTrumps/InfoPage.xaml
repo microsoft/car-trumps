@@ -43,8 +43,8 @@ hand is given to both players from the deck. Both players select a card from the
 decks. Then the other one of the players has to choose a property to compare. 
 The comparison is executed by touching the devices together. The winner gets the 
 opponent's losing card. The game ends when either player runs out of cards.
-&#x0a;&#x0a;This example application is hosted in Nokia Developer Projects:"/>
-            <HyperlinkButton Margin="0,0,0,0" HorizontalAlignment="Left" TargetName="_blank" Content="projects.developer.nokia.com/cartrumps" NavigateUri="http://projects.developer.nokia.com/cartrumps"/>
+&#x0a;&#x0a;This example application is hosted in GitHub:"/>
+            <HyperlinkButton Margin="0,0,0,0" HorizontalAlignment="Left" TargetName="_blank" Content="github.com/Microsoft/car-trumps" NavigateUri="https://github.com/Microsoft/car-trumps"/>
         </StackPanel>
     </Grid>
 
