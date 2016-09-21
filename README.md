@@ -86,7 +86,7 @@ See the license text file delivered with this project. The license file is also
 available online at
 https://github.com/Microsoft/car-trumps/blob/master/Licence.txt
 
-All the car images were taken from [Wikipedia](en.wikipedia.org). Here is a
+All the car images were taken from [Wikipedia](http://en.wikipedia.org). Here is a
 complete list of the used images (public domain):
 
 * http://en.wikipedia.org/wiki/File:2005-07_Volvo_V70.jpg
